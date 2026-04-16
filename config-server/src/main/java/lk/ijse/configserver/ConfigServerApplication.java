@@ -5,7 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
+
 @SpringBootApplication
+@EnableConfigServer // Config Server එකක් ලෙස ක්‍රියා කිරීමට මෙය අත්‍යවශ්‍යයි
+@EnableDiscoveryClient
 public class ConfigServerApplication {
 
 	public static void main(String[] args) {
