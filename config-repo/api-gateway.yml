@@ -30,12 +30,19 @@ spring:
           predicates:
             - path=/api/sensor/**
 
-        - id: zone-service
-          uri: lb://zone-service
+#        - id: zone-service
+#          uri: lb://zone-service
+#          predicates:
+#            - Path=/api/zone/**
+
+        - id: auth-service
+          uri: lb://auth-service
           predicates:
-            - Path=/api/zone/**
+            - Path=/api/auth/**
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+jwt:
+  secret: mySecretKey1234567890123456789012345678901234567890
