@@ -1,4 +1,4 @@
-package lk.ijse.apigateway.util;
+package lk.ijse.authservice.util;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
