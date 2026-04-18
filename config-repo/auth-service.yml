@@ -1,0 +1,24 @@
+server:
+  port: 8082 # අනෙක් services වලට වඩා වෙනස් port එකක් (උදා: 8084)
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/agms_user_db?createDatabaseIfNotExist=true
+    username: root
+    password: Thamidu1234 # ඔයාගේ MySQL Password එක
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret: mySecretKey1234567890123456789012345678901234567890
