@@ -1,0 +1,41 @@
+server:
+  port: 8089 # Gateway එක සාමාන්‍යයෙන් දුවන්නේ 8080 පෝට් එකේ
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        # Zone Service සඳහා මඟ පෙන්වීම
+        - id: zone-service
+          uri: lb://zone-service # lb කියන්නේ Load Balancer (Eureka එකෙන් නම හොයාගනී)
+          predicates:
+            - Path=/api/zones/** # /api/zones වලින් පටන් ගන්නා requests මෙයාට යවන්න
+
+        # Automation Service සඳහා මඟ පෙන්වීම
+        - id: automation-service
+          uri: lb://automation-service
+          predicates:
+            - Path=/api/automation/**
+
+        # Crop Service සඳහා මඟ පෙන්වීම
+        - id: crop-service
+          uri: lb://crop-service
+          predicates:
+            - Path=/api/crops/**
+
+        - id: sensor-service
+          uri: lb://sensor-service
+          predicates:
+            - path=/api/sensor/**
+
+        - id: zone-service
+          uri: lb://zone-service
+          predicates:
+            - Path=/api/zone/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
