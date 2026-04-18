@@ -3,10 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/agms_user_db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/agms_user_db?createDatabaseIfNotExist=true # ඔයාගේ DB එකේ නම
     username: root
-    password: Thamidu1234 # ඔයාගේ MySQL Password එක
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Thamidu1234
   jpa:
     hibernate:
       ddl-auto: update

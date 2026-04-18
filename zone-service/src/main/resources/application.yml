@@ -1,5 +1,5 @@
 spring:
-        application:
-                name: zone-service # අනිවාර්යයෙන්ම මේ නමම config-repo එකේ file එකටත් තියෙන්න ඕනේ
-        config:
-                import: "optional:configserver:http://localhost:8888" # Config Server එකට connect වෙන්න
+  application:
+      name: zone-service # අනිවාර්යයෙන්ම මේ නමම config-repo එකේ file එකටත් තියෙන්න ඕනේ
+  config:
+      import: "optional:configserver:http://localhost:8888" # Config Server එකට connect වෙන්න
